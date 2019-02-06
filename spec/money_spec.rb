@@ -1,3 +1,5 @@
+require_relative '../lib/dollar'
+
 RSpec.describe 'Dollar' do
   it '$5 * 2 = $10' do
     five = Dollar.new(5)
