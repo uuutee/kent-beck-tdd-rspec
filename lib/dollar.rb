@@ -6,6 +6,6 @@ class Dollar
   end
 
   def times(multiplier)
-    @amount = 5 * 2
+    @amount = @amount * multiplier
   end
 end
