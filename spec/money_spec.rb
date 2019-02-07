@@ -8,4 +8,8 @@ RSpec.describe 'Dollar' do
     product = five.times(3)
     expect(product.amount).to eq(15)
   end
+
+  it 'equality' do
+    expect(Dollar.new(5).equals(Dollar.new(5)))
+  end
 end
