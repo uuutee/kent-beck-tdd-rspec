@@ -10,6 +10,7 @@ RSpec.describe 'Dollar' do
   end
 
   it 'equality' do
-    expect(Dollar.new(5).equals(Dollar.new(5)))
+    expect(Dollar.new(5).equals(Dollar.new(5))).to be_truthy
+    expect(Dollar.new(5).equals(Dollar.new(6))).to be_falsy
   end
 end
