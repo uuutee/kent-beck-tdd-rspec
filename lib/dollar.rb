@@ -10,6 +10,6 @@ class Dollar
   end
 
   def equals(object)
-    true
+    amount == object.amount
   end
 end
