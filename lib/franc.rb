@@ -8,8 +8,4 @@ class Franc < Money
   def times(multiplier)
     Franc.new(@amount * multiplier)
   end
-
-  def equals(object)
-    amount == object.amount
-  end
 end
