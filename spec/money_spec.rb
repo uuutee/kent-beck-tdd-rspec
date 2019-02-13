@@ -1,4 +1,5 @@
 require_relative '../lib/dollar'
+require_relative '../lib/franc'
 
 RSpec.describe 'Dollar' do
   it 'multiplication' do
