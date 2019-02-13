@@ -1,7 +1,7 @@
 class Money
   attr_accessor :amount
 
-  def equals(object)
-    amount == object.amount
+  def equals(money)
+    amount == money.amount
   end
 end
