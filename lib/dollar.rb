@@ -8,8 +8,4 @@ class Dollar < Money
   def times(multiplier)
     Dollar.new(@amount * multiplier)
   end
-
-  def equals(object)
-    amount == object.amount
-  end
 end
