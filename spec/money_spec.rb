@@ -1,3 +1,5 @@
+require 'byebug'
+
 require_relative '../lib/dollar'
 require_relative '../lib/franc'
 
