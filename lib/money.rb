@@ -2,7 +2,7 @@ class Money
   attr_accessor :amount
 
   def equals(money)
-    amount == money.amount
+    amount == money.amount && self.class == money.class
   end
 
   # Javaと異なり、Rubyでの == は同一性の比較になる
