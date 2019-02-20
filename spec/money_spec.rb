@@ -5,7 +5,7 @@ require_relative '../lib/franc'
 
 RSpec.describe 'Dollar' do
   it 'multiplication' do
-    five = Dollar.new(5)
+    five = Money.dollar(5)
     expect(Dollar.new(10)).to eql five.times(2)
     expect(Dollar.new(15)).to eql five.times(3)
   end
