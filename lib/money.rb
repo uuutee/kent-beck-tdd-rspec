@@ -19,4 +19,8 @@ class Money
       false
     end
   end
+
+  def self.dollar(amount)
+    Dollar.new(amount)
+  end
 end
