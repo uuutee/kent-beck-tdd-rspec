@@ -9,8 +9,4 @@ class Franc < Money
   def times(multiplier)
     Franc.new(@amount * multiplier)
   end
-
-  def currency
-    @currency
-  end
 end

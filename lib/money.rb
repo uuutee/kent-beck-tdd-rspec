@@ -28,4 +28,8 @@ class Money
   def self.franc(amount)
     Franc.new(amount)
   end
+
+  def currency
+    @currency
+  end
 end
