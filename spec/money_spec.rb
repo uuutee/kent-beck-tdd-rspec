@@ -16,19 +16,9 @@ RSpec.describe 'Money' do
     expect('CHF').to eq(Money.franc(1).currency)
   end
 
-  describe 'Dollar' do
-    it 'multiplication' do
-      five = Money.dollar(5)
-      expect(five.times(2)).to eql Money.dollar(10)
-      expect(five.times(3)).to eql Money.dollar(15)
-    end
-  end
-
-  describe 'Franc' do
-    it 'multiplication' do
-      five = Money.franc(5)
-      expect(five.times(2)).to eql Money.franc(10)
-      expect(five.times(3)).to eql Money.franc(15)
-    end
+  it 'multiplication' do
+    five = Money.dollar(5)
+    expect(five.times(2)).to eql Money.dollar(10)
+    expect(five.times(3)).to eql Money.dollar(15)
   end
 end
