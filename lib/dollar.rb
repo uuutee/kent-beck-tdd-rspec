@@ -6,6 +6,6 @@ class Dollar < Money
   end
 
   def times(multiplier)
-    Money.dollar(@amount * multiplier)
+    Dollar.new(@amount * multiplier, 'USD')
   end
 end
