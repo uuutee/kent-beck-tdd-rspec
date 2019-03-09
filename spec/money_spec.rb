@@ -28,8 +28,8 @@ RSpec.describe 'Money' do
   describe 'Franc' do
     it 'multiplication' do
       five = Money.franc(5)
-      expect(Money.franc(10).equals(five.times(2))).to be_truthy
-      expect(Money.franc(15).equals(five.times(3))).to be_truthy
+      expect(five.times(2)).to eql Money.franc(10)
+      expect(five.times(3)).to eql Money.franc(15)
     end
   end
 end
