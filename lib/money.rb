@@ -8,7 +8,7 @@ class Money
   end
 
   def equals(money)
-    amount == money.amount && self.class == money.class
+    amount == money.amount && currency == money.currency
   end
 
   # Javaと異なり、Rubyでの == は同一性の比較になる
