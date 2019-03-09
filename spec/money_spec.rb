@@ -1,7 +1,6 @@
 require 'byebug'
 
-require_relative '../lib/dollar'
-require_relative '../lib/franc'
+require_relative '../lib/money'
 
 RSpec.describe 'Money' do
   it 'equality' do
