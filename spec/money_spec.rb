@@ -23,11 +23,20 @@ RSpec.describe 'Money' do
     expect(five.times(3)).to eql Money.dollar(15)
   end
 
-  it 'simple addition' do
-    five = Money.dollar(5)
-    sum = five.plus(five)
-    bank = Bank.new
-    reduced = bank.reduce(sum, 'USD')
-    expect(reduced).to eql Money.dollar(10)
+  context '#plus' do
+    it 'simple addition' do
+      five = Money.dollar(5)
+      sum = five.plus(five)
+      bank = Bank.new
+      reduced = bank.reduce(sum, 'USD')
+      expect(reduced).to eql Money.dollar(  10)
+    end
+
+    it 'returns Sum' do
+      five = Money.dollar(5)
+      result = five.plus(five)
+      expect(result.augend).to eq(five)
+      expect(result.addend).to eq(five)
+    end
   end
 end

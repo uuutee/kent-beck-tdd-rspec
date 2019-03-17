@@ -1,4 +1,5 @@
 require_relative 'expression'
+require_relative 'sum'
 
 class Money < Expression
   attr_accessor :amount
