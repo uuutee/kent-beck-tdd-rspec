@@ -1,5 +1,6 @@
 require 'byebug'
 
+require_relative '../lib/bank'
 require_relative '../lib/money'
 
 RSpec.describe 'Money' do
