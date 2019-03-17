@@ -39,4 +39,13 @@ RSpec.describe 'Money' do
       expect(result.addend).to eql five
     end
   end
+
+  describe '#reduce' do
+    it 'returns correct Money' do
+      sum = Sum.new(Money.dollar(3), Money.dollar(4))
+      bank = Bank.new
+      result = bank.reduce(sum, 'USD')
+      expect(result).to eql Money.dollar(7)
+    end
+  end
 end
