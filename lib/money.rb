@@ -1,4 +1,6 @@
-class Money
+require_relative 'expression'
+
+class Money < Expression
   attr_accessor :amount
 
   def initialize(amount, currency)
