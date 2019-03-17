@@ -1,5 +1,6 @@
 require 'byebug'
 
+require_relative '../lib/bank'
 require_relative '../lib/money'
 
 RSpec.describe 'Money' do
@@ -20,5 +21,13 @@ RSpec.describe 'Money' do
     five = Money.dollar(5)
     expect(five.times(2)).to eql Money.dollar(10)
     expect(five.times(3)).to eql Money.dollar(15)
+  end
+
+  it 'simple addition' do
+    five = Money.dollar(5)
+    sum = five.plus(five)
+    bank = Bank.new
+    reduced = bank.reduce(sum, 'USD')
+    expect(reduced).to eql Money.dollar(10)
   end
 end

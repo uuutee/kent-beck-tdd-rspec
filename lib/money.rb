@@ -1,6 +1,7 @@
-class Money
+require_relative 'expression'
+
+class Money < Expression
   attr_accessor :amount
-  attr_accessor :currency
 
   def initialize(amount, currency)
     @amount = amount
@@ -40,5 +41,9 @@ class Money
 
   def times(multiplier)
     Money.new(@amount * multiplier, @currency)
+  end
+
+  def plus(addend)
+    Money.new(@amount + addend.amount, @currency)
   end
 end
