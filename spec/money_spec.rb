@@ -35,8 +35,8 @@ RSpec.describe 'Money' do
     it 'returns Sum' do
       five = Money.dollar(5)
       result = five.plus(five)
-      expect(result.augend).to eq(five)
-      expect(result.addend).to eq(five)
+      expect(result.augend).to eql five
+      expect(result.addend).to eql five
     end
   end
 end
