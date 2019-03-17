@@ -12,6 +12,26 @@ class Money < Expression
     amount == money.amount && currency == money.currency
   end
 
+  def currency
+    @currency
+  end
+
+  def times(multiplier)
+    Money.new(@amount * multiplier, @currency)
+  end
+
+  def plus(addend)
+    Money.new(@amount + addend.amount, @currency)
+  end
+
+  def self.dollar(amount)
+    Money.new(amount, 'USD')
+  end
+
+  def self.franc(amount)
+    Money.new(amount, 'CHF')
+  end
+
   # Javaと異なり、Rubyでの == は同一性の比較になる
   # RSpecでは eql での比較時に内部でオブジェクトの eql? を呼んでいるため、
   # eql? をオーバーライドすることで同値性の比較ができるようになる
@@ -25,25 +45,5 @@ class Money < Expression
     else
       false
     end
-  end
-
-  def self.dollar(amount)
-    Money.new(amount, 'USD')
-  end
-
-  def self.franc(amount)
-    Money.new(amount, 'CHF')
-  end
-
-  def currency
-    @currency
-  end
-
-  def times(multiplier)
-    Money.new(@amount * multiplier, @currency)
-  end
-
-  def plus(addend)
-    Money.new(@amount + addend.amount, @currency)
   end
 end
