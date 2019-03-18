@@ -47,5 +47,11 @@ RSpec.describe 'Money' do
       result = bank.reduce(sum, 'USD')
       expect(result).to eql Money.dollar(7)
     end
+
+    it 'recive Money as an arguments' do
+      bank = Bank.new
+      result = bank.reduce(Money.dollar(1), 'USD')
+      expect(result).to eql Money.dollar(1)
+    end
   end
 end
