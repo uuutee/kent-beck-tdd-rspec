@@ -1,7 +1,6 @@
 class Bank
   def reduce(source, to)
     sum = source
-    amount = sum.augend.amount + sum.addend.amount
-    Money.new(amount, to)
+    sum.reduce(to)
   end
 end

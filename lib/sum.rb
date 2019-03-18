@@ -6,4 +6,9 @@ class Sum < Expression
     @augend = augend
     @addend = addend
   end
+
+  def reduce(to)
+    amount = augend.amount + addend.amount
+    Money.new(amount, to)
+  end
 end
