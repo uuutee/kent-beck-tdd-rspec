@@ -1,4 +1,5 @@
 require_relative 'expression'
+require_relative 'sum'
 
 class Money < Expression
   attr_accessor :amount
@@ -10,6 +11,30 @@ class Money < Expression
 
   def equals(money)
     amount == money.amount && currency == money.currency
+  end
+
+  def currency
+    @currency
+  end
+
+  def times(multiplier)
+    Money.new(@amount * multiplier, @currency)
+  end
+
+  def plus(addend)
+    Sum.new(self, addend)
+  end
+
+  def reduce(to)
+    self
+  end
+
+  def self.dollar(amount)
+    Money.new(amount, 'USD')
+  end
+
+  def self.franc(amount)
+    Money.new(amount, 'CHF')
   end
 
   # Javaと異なり、Rubyでの == は同一性の比較になる
@@ -25,25 +50,5 @@ class Money < Expression
     else
       false
     end
-  end
-
-  def self.dollar(amount)
-    Money.new(amount, 'USD')
-  end
-
-  def self.franc(amount)
-    Money.new(amount, 'CHF')
-  end
-
-  def currency
-    @currency
-  end
-
-  def times(multiplier)
-    Money.new(@amount * multiplier, @currency)
-  end
-
-  def plus(addend)
-    Money.new(@amount + addend.amount, @currency)
   end
 end
