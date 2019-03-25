@@ -1,4 +1,4 @@
-class Expression
+module Expression
   def reduce(to)
     raise NotImplementedError
   end

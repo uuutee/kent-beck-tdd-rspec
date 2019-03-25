@@ -1,4 +1,6 @@
-class Sum < Expression
+class Sum
+  include Expression
+
   attr_accessor :augend
   attr_accessor :addend
 
