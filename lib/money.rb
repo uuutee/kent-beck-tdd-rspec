@@ -1,7 +1,9 @@
 require_relative 'expression'
 require_relative 'sum'
 
-class Money < Expression
+class Money
+  include Expression
+
   attr_accessor :amount
 
   def initialize(amount, currency)
