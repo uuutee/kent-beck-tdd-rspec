@@ -63,12 +63,4 @@ RSpec.describe 'Money' do
       end
     end
   end
-
-  it 'array equals' do
-    expect(['abc']).to eq ['abc']
-  end
-
-  it 'hash equals ' do
-    expect({ abc: 'def' }).to eq({ abc: 'def' })
-  end
 end
