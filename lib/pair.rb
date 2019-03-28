@@ -6,4 +6,8 @@ class Pair
     @from = from
     @to = to
   end
+
+  def equals(pair)
+    from == pair.from && to == pair.to
+  end
 end
