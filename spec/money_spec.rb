@@ -63,4 +63,12 @@ RSpec.describe 'Money' do
       end
     end
   end
+
+  describe '#rate' do
+    context 'when same currency' do
+      it 'returns 1' do
+        expect(Bank.new.rate('USD', 'USD')).to eq(1)
+      end
+    end
+  end
 end
