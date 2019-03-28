@@ -1,5 +1,3 @@
-require_relative 'pair'
-
 class Bank
   attr_accessor :rates
 
@@ -12,14 +10,12 @@ class Bank
   end
 
   def add_rate(from, to, rate)
-    pair = Pair.new(from, to)
-    rates["#{pair.from}_#{pair.to}"] = rate
+    rates["#{from}_#{to}"] = rate
   end
 
   def rate(from, to)
     return 1 if from == to
 
-    pair = Pair.new(from, to)
-    rates["#{pair.from}_#{pair.to}"]
+    rates["#{from}_#{to}"]
   end
 end
