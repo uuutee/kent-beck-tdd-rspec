@@ -14,6 +14,7 @@ class Sum
     Money.new(amount, to)
   end
 
-  def plus
+  def plus(addend)
+    Sum.new(self, addend)
   end
 end
