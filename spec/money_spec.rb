@@ -103,7 +103,7 @@ RSpec.describe 'Sum' do
       bank.add_rate('CHF', 'USD', 2)
       sum = Sum.new(five_bucks, ten_francs).times(2)
       result = bank.reduce(sum, 'USD')
-      expect(result).to eql Money.dollar(20)
+      expect(result).to eql Money.dollar(30)
     end
   end
 end
