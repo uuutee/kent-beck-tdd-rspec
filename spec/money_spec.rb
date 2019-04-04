@@ -84,7 +84,7 @@ end
 
 RSpec.describe 'Sum' do
   describe '#plus' do
-    it 'plus Money' do
+    it 'plus different currency' do
       five_bucks = Money.dollar(5)
       ten_francs = Money.franc(10)
       bank = Bank.new
