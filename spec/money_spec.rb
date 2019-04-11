@@ -38,13 +38,6 @@ RSpec.describe 'Money' do
       expect(result.augend).to eql five
       expect(result.addend).to eql five
     end
-
-    context 'same currency' do
-      it 'returns Money' do
-        sum = Money.dollar(1).plus(Money.dollar(1))
-        expect(sum).to be_a(Money)
-      end
-    end
   end
 
   describe '#reduce' do
