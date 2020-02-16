@@ -81,3 +81,29 @@ RSpec.describe 'Money' do
     end
   end
 end
+
+RSpec.describe 'Sum' do
+  describe '#plus' do
+    it 'plus different currency' do
+      five_bucks = Money.dollar(5)
+      ten_francs = Money.franc(10)
+      bank = Bank.new
+      bank.add_rate('CHF', 'USD', 2)
+      sum = Sum.new(five_bucks, ten_francs).plus(five_bucks)
+      result = bank.reduce(sum, 'USD')
+      expect(result).to eql Money.dollar(15)
+    end
+  end
+
+  describe '#times' do
+    it 'times different currency' do
+      five_bucks = Money.dollar(5)
+      ten_francs = Money.dollar(10)
+      bank = Bank.new
+      bank.add_rate('CHF', 'USD', 2)
+      sum = Sum.new(five_bucks, ten_francs).times(2)
+      result = bank.reduce(sum, 'USD')
+      expect(result).to eql Money.dollar(30)
+    end
+  end
+end
